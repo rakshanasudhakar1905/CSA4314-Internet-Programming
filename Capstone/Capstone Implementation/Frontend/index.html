@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Multi-Store Price Comparison & Deal Alert Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <h1>Smart Multi-Store Price Comparison & Deal Alert Platform</h1>
+        <p>Compare Live Prices Across Amazon, Flipkart, Myntra, Meesho & Ajio</p>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Search products (e.g., iPhone 15, Nike Running Shoes, Kurti, Smartwatch)...">
+            <button onclick="searchProduct()">Compare Live Prices</button>
+        </section>
+
+        <div id="loader" class="loader hidden">Fetching live prices across 5 e-commerce stores...</div>
+
+        <section id="recommendationBanner" class="recommendation-banner hidden"></section>
+
+        <section id="comparisonGrid" class="comparison-grid hidden">
+            <!-- Amazon -->
+            <div class="card" id="amazonCard">
+                <span class="badge amazon">Amazon.in</span>
+                <img id="amazonImg" src="" alt="Amazon Product" class="product-img hidden">
+                <h3 id="amazonTitle">Product Title</h3>
+                <p class="price" id="amazonPrice">--</p>
+                <a id="amazonLink" href="#" target="_blank" rel="noopener noreferrer" class="btn amazon-btn">Buy on Amazon →</a>
+            </div>
+
+            <!-- Flipkart -->
+            <div class="card" id="flipkartCard">
+                <span class="badge flipkart">Flipkart</span>
+                <img id="flipkartImg" src="" alt="Flipkart Product" class="product-img hidden">
+                <h3 id="flipkartTitle">Product Title</h3>
+                <p class="price" id="flipkartPrice">--</p>
+                <a id="flipkartLink" href="#" target="_blank" rel="noopener noreferrer" class="btn flipkart-btn">Buy on Flipkart →</a>
+            </div>
+
+            <!-- Myntra -->
+            <div class="card" id="myntraCard">
+                <span class="badge myntra">Myntra</span>
+                <img id="myntraImg" src="" alt="Myntra Product" class="product-img hidden">
+                <h3 id="myntraTitle">Product Title</h3>
+                <p class="price" id="myntraPrice">--</p>
+                <a id="myntraLink" href="#" target="_blank" rel="noopener noreferrer" class="btn myntra-btn">Buy on Myntra →</a>
+            </div>
+
+            <!-- Meesho -->
+            <div class="card" id="meeshoCard">
+                <span class="badge meesho">Meesho</span>
+                <img id="meeshoImg" src="" alt="Meesho Product" class="product-img hidden">
+                <h3 id="meeshoTitle">Product Title</h3>
+                <p class="price" id="meeshoPrice">--</p>
+                <a id="meeshoLink" href="#" target="_blank" rel="noopener noreferrer" class="btn meesho-btn">Buy on Meesho →</a>
+            </div>
+
+            <!-- Ajio -->
+            <div class="card" id="ajioCard">
+                <span class="badge ajio">Ajio</span>
+                <img id="ajioImg" src="" alt="Ajio Product" class="product-img hidden">
+                <h3 id="ajioTitle">Product Title</h3>
+                <p class="price" id="ajioPrice">--</p>
+                <a id="ajioLink" href="#" target="_blank" rel="noopener noreferrer" class="btn ajio-btn">Buy on Ajio →</a>
+            </div>
+        </section>
+
+        <section id="alertAndChartSection" class="bottom-grid hidden">
+            <div class="panel">
+                <h2>Set Automated Price Drop Alert</h2>
+                <p>Get notified via email when the lowest price across these 5 stores drops below your target:</p>
+                <form onsubmit="submitAlert(event)">
+                    <input type="email" id="alertEmail" placeholder="Enter your email" required>
+                    <input type="number" id="targetPrice" placeholder="Target Price (₹)" required>
+                    <button type="submit" class="alert-btn">Notify Me on Price Drop</button>
+                </form>
+                <p id="alertStatus" class="status-msg"></p>
+            </div>
+
+            <div class="panel">
+                <h2>Multi-Platform Price History Trend</h2>
+                <canvas id="priceChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

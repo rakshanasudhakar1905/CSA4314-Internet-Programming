@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f6fc;
+    color: #1e293b;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #0284c7, #1d4ed8);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.search-section {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-section input {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #bae6fd;
+    border-radius: 10px;
+    outline: none;
+}
+
+.search-section input:focus {
+    border-color: #0284c7;
+}
+
+.search-section button {
+    padding: 1rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #0284c7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-section button:hover {
+    background-color: #0369a1;
+}
+
+.loader {
+    text-align: center;
+    padding: 1.5rem;
+    font-weight: 600;
+    color: #0284c7;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.recommendation-banner {
+    background-color: #dcfce7;
+    border: 2px solid #22c55e;
+    color: #14532d;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.recommendation-banner a {
+    background-color: #16a34a;
+    color: white;
+    padding: 0.65rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 1.3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card.winner {
+    border-color: #22c55e;
+    background-color: #f0fdf4;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.badge.amazon { background-color: #fef3c7; color: #b45309; }
+.badge.flipkart { background-color: #dbeafe; color: #1d4ed8; }
+.badge.myntra { background-color: #fce7f3; color: #be185d; }
+.badge.meesho { background-color: #f3e8ff; color: #7e22ce; }
+.badge.ajio { background-color: #e2e8f0; color: #1e293b; }
+
+.product-img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin: 0 auto 0.8rem auto;
+}
+
+.card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.35;
+    min-height: 2.6rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.amazon-btn { background-color: #f59e0b; }
+.flipkart-btn { background-color: #2563eb; }
+.myntra-btn { background-color: #ec4899; }
+.meesho-btn { background-color: #9333ea; }
+.ajio-btn { background-color: #334155; }
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+.panel {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.panel h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: #0369a1;
+}
+
+.panel p {
+    font-size: 0.92rem;
+    color: #475569;
+    margin-bottom: 1rem;
+}
+
+.panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.panel input {
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.alert-btn {
+    padding: 0.85rem;
+    background-color: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.status-msg {
+    margin-top: 0.8rem;
+    font-weight: 600;
+    color: #16a34a;
+}
